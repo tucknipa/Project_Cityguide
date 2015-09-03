@@ -1,0 +1,305 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>City Guide Documentation</title><style></style></head><body>
+<h1 id="city-guide-documentation">City Guide Documentation</h1>
+<p>This is a documentation for City Guide app created by <a href="http://robotemplates.com/">Robo Templates</a>. City Guide is a native Android application. You can find here useful info about configuring, customizing, building and publishing the app.</p>
+<ul>
+<li><a href="https://play.google.com/store/apps/details?id=com.robotemplates.cityguide">Live demo on Google Play</a></li>
+</ul>
+<h2 id="features">Features</h2>
+<ul>
+<li>Support for Ice Cream Sandwich (Android 4.0.3) and newer</li>
+<li>Developed with Android Studio &amp; Gradle</li>
+<li>Material design following Android Design Guidelines</li>
+<li>Eight color themes (blue, brown, carrot, gray, green, indigo, red, yellow)</li>
+<li>Animations and effects</li>
+<li>Animated action bar</li>
+<li>Animated floating action button</li>
+<li>Parallax scrolling effect</li>
+<li>Quick return effect</li>
+<li>Ripple effect</li>
+<li>Navigation drawer menu with categories</li>
+<li>List of POI</li>
+<li>Search for POI with suggestion</li>
+<li>Favorite spots</li>
+<li>Geolocation</li>
+<li>Interactive map with clickable spots</li>
+<li>Map layers (normal, satellite, hybrid, terrain)</li>
+<li>POI detail screen (info, map, description)</li>
+<li>Static map image</li>
+<li>Navigate to the spot</li>
+<li>Share POI</li>
+<li>Open web link of the POI</li>
+<li>Phone call and e-mail intents</li>
+<li>Current distance to the POI</li>
+<li>Support for metric and imperial units</li>
+<li>About dialog</li>
+<li>Rate app on Google Play</li>
+<li>Data (categories, POI) is stored in local SQLite database</li>
+<li>Images can be loaded from the Internet or locally</li>
+<li>Caching images</li>
+<li>App works in offline mode</li>
+<li>Google Analytics</li>
+<li>AdMob</li>
+<li>Responsive design and tablet support (portrait, landscape, handling orientation change)</li>
+<li>Support for high-resolution displays (xxxhdpi)</li>
+<li>Multi-language support</li>
+<li>Possibility to build the project without Android Studio / Eclipse (using Gradle &amp; Android SDK)</li>
+<li>Easy configuration</li>
+<li>Well documented</li>
+<li>Top quality clean code created by experienced senior Android developer</li>
+<li>Free support</li>
+</ul>
+<h2 id="android-sdk-android-studio">Android SDK &amp; Android Studio</h2>
+<p>This chapter describes how to install Android SDK and Android Studio. You don&#39;t have to install Android Studio, but it&#39;s better. The project can be built without Android Studio, using Gradle and Android SDK. Gradle is a build system used for building final APK file.</p>
+<ol>
+<li>Install <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">Java JDK</a></li>
+<li>Install <a href="https://developer.android.com/sdk/index.html">Android SDK</a></li>
+<li>Run Android SDK Manager and <a href="https://developer.android.com/sdk/installing/adding-packages.html">download necessary SDK packages</a>, make sure that you have installed Android SDK Tools, Android SDK Platform-tools, Android SDK Build-tools, Android Support Repository, Android Support Library and Google Play services</li>
+<li>Install <a href="https://developer.android.com/sdk/index.html">Android Studio</a></li>
+<li>Now you should be able to open/edit the Android project and build APK</li>
+<li>You can also install <a href="http://www.genymotion.com/">Genymotion</a> - fast Android emulator</li>
+</ol>
+<h2 id="project-structure">Project structure</h2>
+<p>Project has the following structure (directories are marked by square braces):</p>
+<ul>
+<li>[doc] - documentation</li>
+<li>[extras] - contains extras</li>
+<li>[extras]/[keystore]</li>
+<li>[extras]/[keystore]/cityguide.keystore - keystore certificate for signing APK</li>
+<li>[extras]/[keystore]/cityguide.properties - alias and password for keystore</li>
+<li>[gradle]</li>
+<li>[gradle]/[wrapper] - Gradle Wrapper</li>
+<li>[mobile] - main module</li>
+<li>[mobile]/[libs] - contains 3rd party libraries</li>
+<li>[mobile]/[src] - contains source code</li>
+<li>[mobile]/[src]/[main]</li>
+<li>[mobile]/[src]/[main]/[assets] - asset files (prepopulated database, images)</li>
+<li>[mobile]/[src]/[main]/[java] - java sources</li>
+<li>[mobile]/[src]/[main]/[res] - xml resources, drawables</li>
+<li>[mobile]/[src]/[main]/AndroidManifest.xml - manifest file</li>
+<li>[mobile]/build.gradle - main build script</li>
+<li>[mobile]/proguard-rules.pro - Proguard config (not used)</li>
+<li>.gitignore - Gitignore file</li>
+<li>build.gradle - parent build script</li>
+<li>gradle.properties - build script properties containing path to keystore</li>
+<li>gradlew - Gradle Wrapper (Unix)</li>
+<li>gradlew.bat - Gradle Wrapper (Windows)</li>
+<li>README.md - readme file</li>
+<li>settings.gradle - build settings containing list of modules</li>
+</ul>
+<p>Java packages:</p>
+<ul>
+<li>com.robotemplates.cityguide - contains application class and main config class</li>
+<li>com.robotemplates.cityguide.activity - contains activities representing screens</li>
+<li>com.robotemplates.cityguide.adapter - contains all adapters</li>
+<li>com.robotemplates.cityguide.content - contains content provider for search suggestions</li>
+<li>com.robotemplates.cityguide.database - contains database helper and tools for managing asynchronous database calls</li>
+<li>com.robotemplates.cityguide.database.dao - database access objects</li>
+<li>com.robotemplates.cityguide.database.data - data model wrapper</li>
+<li>com.robotemplates.cityguide.database.model - database models representing SQL tables</li>
+<li>com.robotemplates.cityguide.database.query - database queries</li>
+<li>com.robotemplates.cityguide.dialog - contains dialogs</li>
+<li>com.robotemplates.cityguide.fragment - contains fragments with main application logic</li>
+<li>com.robotemplates.cityguide.geolocation - contains geolocation helper</li>
+<li>com.robotemplates.cityguide.listener - contains listeners</li>
+<li>com.robotemplates.cityguide.utility - contains utilities</li>
+<li>com.robotemplates.cityguide.view - contains custom views, layouts, decorations and other tools for working with views</li>
+</ul>
+<h2 id="configuration">Configuration</h2>
+<p>This chapter describes how to configure the project to be ready for publishing. All these steps are very important!</p>
+<h3 id="1-import">1. Import</h3>
+<p>Unzip the package and import/open the project in Android Studio. Choose &quot;Import project&quot; on Quick Start screen and select &quot;cityguide-x.y.z&quot; directory.</p>
+<h3 id="2-rename-package-name">2. Rename package name</h3>
+<ol>
+<li>Create new package in <em>java</em> directory, e.g. &quot;com.mycompany.myapp&quot;. Right click on <em>mobile/src/main/java</em> directory -&gt; New -&gt; Package.</li>
+<li>Select all packages and classes in &quot;com.robotemplates.cityguide&quot; and move (drag) them to the new package. Confirm by click on &quot;Do Refactor&quot;.</li>
+<li>Delete the old package &quot;com.robotemplates.cityguide&quot;.</li>
+<li>Open <em>mobile/src/main/AndroidManifest.xml</em> and rename the package name. Select package name &quot;com.robotemplates.cityguide&quot; -&gt; Right click on selected text -&gt; Refactor -&gt; Rename -&gt; enter the new package name, select &quot;Search in comments and strings&quot; option -&gt; Refactor -&gt; Do Refactor.</li>
+<li>Clean the project. Main menu -&gt; Build -&gt; Clean Project.</li>
+<li>Replace all occurrences of &quot;com.robotemplates.cityguide&quot; for a new package name, e.g. &quot;com.mycompany.myapp&quot;. Right click on <em>mobile</em> directory -&gt; Replace in Path -&gt; set old and new package names, Case sensitive to true -&gt; Find -&gt; Replace.</li>
+<li>Clean the project again. Main menu -&gt; Build -&gt; Clean Project.</li>
+<li>Synchronize the project. Main menu -&gt; Tools -&gt; Android -&gt; Sync Project with Gradle Files.</li>
+<li>If you see &quot;Activity class does not exist&quot; error, restart Android Studio.</li>
+</ol>
+<h3 id="3-rename-application-name">3. Rename application name</h3>
+<p>Open <em>mobile/src/main/res/values/strings.xml</em> and change &quot;City Guide&quot; to your own name. Change <em>app_name</em> and <em>drawer_title</em> strings.</p>
+<h3 id="4-create-launcher-icon">4. Create launcher icon</h3>
+<p>Right click on <em>mobile/src/main/res</em> directory -&gt; New -&gt; Image Asset -&gt; Asset type Launcher Icons, Resource name &quot;ic_launcher&quot;, create the icon -&gt; Next -&gt; Finish.</p>
+<p>You can also change the icon replacing <em>ic_launcher.png</em> file in <em>mipmap-mdpi</em>, <em>mipmap-hdpi</em>, <em>mipmap-xhdpi</em>, <em>mipmap-xxhdpi</em>, <em>mipmap-xxxhdpi</em> directories. See <a href="http://petrnohejl.github.io/Android-Cheatsheet-For-Graphic-Designers/#screen-densities-and-icon-dimensions">Android Cheatsheet for Graphic Designers</a> for correct launcher icon dimensions.</p>
+<p>Another possibility is to create launcher icons using <a href="http://romannurik.github.io/AndroidAssetStudio/icons-launcher.html">Android Asset Studio</a>.</p>
+<h3 id="5-choose-color-theme">5. Choose color theme</h3>
+<p>Open <em>mobile/src/main/AndroidManifest.xml</em> and change value of <code>application.android:theme</code> attribute. There are 8 themes you can use:</p>
+<ul>
+<li>Theme.CityGuide.Blue</li>
+<li>Theme.CityGuide.Brown</li>
+<li>Theme.CityGuide.Carrot</li>
+<li>Theme.CityGuide.Gray</li>
+<li>Theme.CityGuide.Green</li>
+<li>Theme.CityGuide.Indigo</li>
+<li>Theme.CityGuide.Red</li>
+<li>Theme.CityGuide.Yellow</li>
+</ul>
+<p>You also have to modify MainActivity&#39;s theme. Main Activity uses a special theme with transparent status bar because of navigation drawer status overlay effect. It is an <code>activity.android:theme</code> attribute. Choose one of these themes:</p>
+<ul>
+<li>Theme.CityGuide.TransparentStatusBar.Blue</li>
+<li>Theme.CityGuide.TransparentStatusBar.Brown</li>
+<li>Theme.CityGuide.TransparentStatusBar.Carrot</li>
+<li>Theme.CityGuide.TransparentStatusBar.Gray</li>
+<li>Theme.CityGuide.TransparentStatusBar.Green</li>
+<li>Theme.CityGuide.TransparentStatusBar.Indigo</li>
+<li>Theme.CityGuide.TransparentStatusBar.Red</li>
+<li>Theme.CityGuide.TransparentStatusBar.Yellow</li>
+</ul>
+<h3 id="6-prepare-database-and-images">6. Prepare database and images</h3>
+<p>Data (categories, POI) is stored in local SQLite database. Prepopulated database with POI (points of interest) is stored in <em>mobile/src/main/assets/cityguide.db</em>. This prepopulated database is automatically copied on device storage on first run of the application and also if the database is updated (see below for more info about database update). Database is in SQLite 3.0 format and has the following structure (SQL script):</p>
+<pre><code class="lang-sql"><span class="hljs-operator"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-string">`categories`</span> (<span class="hljs-string">`id`</span> <span class="hljs-built_in">INTEGER</span> <span class="hljs-keyword">PRIMARY</span> <span class="hljs-keyword">KEY</span> AUTOINCREMENT , <span class="hljs-string">`name`</span> <span class="hljs-built_in">VARCHAR</span> , <span class="hljs-string">`image`</span> <span class="hljs-built_in">VARCHAR</span> );</span>
+<span class="hljs-operator"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-string">`pois`</span> (<span class="hljs-string">`id`</span> <span class="hljs-built_in">INTEGER</span> <span class="hljs-keyword">PRIMARY</span> <span class="hljs-keyword">KEY</span> AUTOINCREMENT , <span class="hljs-string">`category_id`</span> <span class="hljs-built_in">BIGINT</span> , <span class="hljs-string">`name`</span> <span class="hljs-built_in">VARCHAR</span> , <span class="hljs-string">`intro`</span> <span class="hljs-built_in">VARCHAR</span> , <span class="hljs-string">`description`</span> <span class="hljs-built_in">VARCHAR</span> , <span class="hljs-string">`image`</span> <span class="hljs-built_in">VARCHAR</span> , <span class="hljs-string">`link`</span> <span class="hljs-built_in">VARCHAR</span> , <span class="hljs-string">`latitude`</span> <span class="hljs-keyword">DOUBLE</span> <span class="hljs-keyword">PRECISION</span> , <span class="hljs-string">`longitude`</span> <span class="hljs-keyword">DOUBLE</span> <span class="hljs-keyword">PRECISION</span> , <span class="hljs-string">`address`</span> <span class="hljs-built_in">VARCHAR</span> , <span class="hljs-string">`phone`</span> <span class="hljs-built_in">VARCHAR</span> , <span class="hljs-string">`email`</span> <span class="hljs-built_in">VARCHAR</span> , <span class="hljs-string">`favorite`</span> <span class="hljs-built_in">SMALLINT</span> );</span>
+<span class="hljs-operator"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">INDEX</span> <span class="hljs-string">`pois_category_idx`</span> <span class="hljs-keyword">ON</span> <span class="hljs-string">`pois`</span> ( <span class="hljs-string">`category_id`</span> );</span>
+</code></pre>
+<p>As you can see, there are 2 SQL tables (categories, pois) and 1 index (category_id) which is also foreign key. This database schema corresponds to database models in the code. You can find models in <em>com.robotemplates.cityguide.database.model</em> package.</p>
+<p>This app contains a prepopulated database with demo data. Open database file <em>mobile/src/main/assets/cityguide.db</em> in any SQLite editor and modify data in the database as you need. You can add/remove/edit POI and categories. There are many <a href="http://www.sqlite.org/cvstrac/wiki?p=ManagementTools">SQLite editors</a>. We recommend <a href="http://sqlitestudio.pl/">SQLite Studio</a> because it is free, open source, cross-platform, portable and intuitive. If you are working with SQLite Studio, don&#39;t forget to commit changes. Don&#39;t modify structure of the database, modify only data! Database tables have following columns:</p>
+<p>categories:</p>
+<ul>
+<li>id (integer) - Unique primary key</li>
+<li>name (string) - Category name</li>
+<li>image (string) - URL of the category image. This field is optional and if it is empty or null, no category image is shown. URL should be in this format: <em>assets://categories/mycategory.png</em>. It points to <em>mobile/src/main/assets/categories</em> folder where all category images should be stored.</li>
+</ul>
+<p>pois:</p>
+<ul>
+<li>id (integer) - Unique primary key</li>
+<li>category_id (integer) - Foreign key pointing to category id</li>
+<li>name (string) - POI name</li>
+<li>intro (string) - Short introduction text on POI detail screen. This field is optional and if it is empty or null, no text is shown.</li>
+<li>description (string) - Main description text of the POI</li>
+<li>image (string) - URL of the POI image. Image can be loaded from the Internet (URL with standard HTTP protocol) or locally from assets. Local URL should be in this format: <em>assets://pois/mypoi.jpg</em>. It points to <em>mobile/src/main/assets/pois</em> folder where all local POI images should be stored.</li>
+<li>link (string) - URL of the web page. This field is optional and if it is empty or null, no web link is shown on the detail screen.</li>
+<li>latitude (double) - Latitude of the POI</li>
+<li>longitude (double) - Longitude of the POI</li>
+<li>address (string) - Address of the POI. This field is optional and if it is empty or null, no address is shown on the detail screen.</li>
+<li>phone (string) - Phone number. This field is optional and if it is empty or null, no phone number is shown on the detail screen.</li>
+<li>email (string) - E-mail address. This field is optional and if it is empty or null, no e-mail address is shown on the detail screen.</li>
+<li>favorite (boolean) - True/false value if the POI is favorite. This field should stay 0 by default. This is the only column modified by the app. All other columns are read only.</li>
+</ul>
+<p>There are two special categories: &quot;All spots&quot; and &quot;Favorites&quot;. Keep in mind that these categories are automatically added to the menu and does not have to be in the database. Categories are ordered by <em>id</em> and POI are ordered alphabetically by <em>name</em>. Search query is looking for a match in <em>name</em>, <em>intro</em>, <em>description</em> and <em>address</em> fields. Searching is case insensitive.</p>
+<p>If you modify prepopulated database in <em>assets</em> folder, internal database on device storage will not be updated automatically. If you make any change in the prepopulated database, you have to increment database version. Open configuration file <em>/mobile/src/main/java/com/robotemplates/cityguide/CityGuideConfig.java</em> and increment number in <em>DATABASE_VERSION</em> constant. Database helper detects that database data has been changed and copy the prepopulated database on device storage so data in the app will be updated. You have to increment database version every time when you want to publish a new build on Google Play and you have changed the data in prepopulated database.</p>
+<p>Name of the prepopulated database is defined in configuration file <em>/mobile/src/main/java/com/robotemplates/cityguide/CityGuideConfig.java</em> in <em>DATABASE_NAME</em> constant. Database file name should correspond to the file in <em>mobile/src/main/assets</em> directory. The database file should be stored in this directory and not in any sub-directory.</p>
+<h3 id="7-setup-google-analytics">7. Setup Google Analytics</h3>
+<p>Open <em>mobile/src/main/res/xml/analytics_app_tracker.xml</em> and change UA code (<em>ga_trackingId</em> parameter) to your own UA code. You can enable/disable Google Analytics in configuration file <em>/mobile/src/main/java/com/robotemplates/cityguide/CityGuideConfig.java</em>.</p>
+<h3 id="8-setup-admob">8. Setup AdMob</h3>
+<p>Open <em>mobile/src/main/res/values/admob.xml</em> and change unit ids (<em>admob_unit_id_poi_list</em>, <em>admob_unit_id_poi_detail</em> and <em>admob_unit_id_map</em> parameters) to your own unit ids (banner ids). You should also specify your test device id (<em>admob_test_device_id</em> parameter) and use test mode when debugging the app. Requesting test ads is recommended when testing your application so you do not request invalid impressions. You can find your hashed device id in the logcat output by requesting an ad when debugging on your device. You can enable/disable AdMob banners in configuration file <em>/mobile/src/main/java/com/robotemplates/cityguide/CityGuideConfig.java</em>.</p>
+<h3 id="9-create-signing-keystore">9. Create signing keystore</h3>
+<p>You need to create your own keystore to sign an APK file before publishing on Google Play. You can create the keystore via <a href="http://docs.oracle.com/javase/7/docs/technotes/tools/solaris/keytool.html">keytool utility</a> which is part of Java JDK.</p>
+<ol>
+<li>Run following command: <code>keytool -genkey -v -keystore cityguide.keystore -alias &lt;your_alias&gt; -keyalg RSA -keysize 2048 -validity 36500</code> where <code>&lt;your_alias&gt;</code> is your alias name. For example your company name or app name. If you are going to publish the app on Google Play, you have to set the validity attribute.</li>
+<li>Copy new <em>cityguide.keystore</em> file into <em>extras/keystore</em> directory.</li>
+<li>Open <em>extras/keystore/cityguide.properties</em> and set keystore alias and passwords.</li>
+<li>Done. Remember that <em>cityguide.keystore</em> and <em>cityguide.properties</em> are automatically read by Gradle script when creating a release APK via <em>assembleRelease</em> command. Paths to these files are defined in <em>gradle.properties</em>.</li>
+</ol>
+<h3 id="10-setup-google-maps">10. Setup Google Maps</h3>
+<p>You need to create an API project in the <a href="https://console.developers.google.com">Google Developers Console</a>, get your app&#39;s certificate information and create a new Android API key. Sign-up to Google Developers Console -&gt; APIs &amp; auth -&gt; APIs. Enable &quot;Google Maps Android API v2&quot; and &quot;Static Maps API&quot;. Go to APIs &amp; auth -&gt; Credentials. Create a new key for Android applications and add certificate SHA1 fingerprint and package name for your debug and release certificates. Debug keystore is usually available in <em>/Users/myusername/.android/debug.keystore</em> directory. Release keystore is available in <em>extras/keystore/cityguide.keystore</em>. Run following command: <code>keytool -list -v -keystore cityguide.keystore</code> to get SHA1 fingerprint.</p>
+<p>Please follow official <a href="https://developers.google.com/maps/documentation/android/signup">documentation</a> how to get API key. Then open <em>mobile/src/main/res/values/strings.xml</em> and change API key (<em>maps_api_key</em> parameter) to your own API key. After you setup the API key, you should completly uninstall the app (if it is installed) from your device and install again or clear app&#39;s data. Otherwise you might have problems with displaying the map.</p>
+<p>App uses two APIs:</p>
+<ul>
+<li><a href="https://developers.google.com/maps/documentation/android/">Google Maps Android API</a> - for interactive map with clickable spots on map screen</li>
+<li><a href="https://developers.google.com/maps/documentation/staticmaps/">Google Maps Static Maps API</a> - for map image preview on POI detail screen (map image is cached)</li>
+</ul>
+<p>City Guide also uses geolocation for receiving current position of the device. This position is used for calculating distance from POI. If geolocation is disabled on device, distance is not visible. Distance is displayed in metric or imperial units - it depends on locale settings of the device.</p>
+<h2 id="customization">Customization</h2>
+<p>This chapter describes some optional customizations of the app.</p>
+<h3 id="custom-colors-and-icons">Custom colors and icons</h3>
+<p>You can customize colors in <em>mobile/src/main/res/values/colors.xml</em>.</p>
+<p>There are 11 category icons. If you need to create the icon for the category, it is recommended to use <a href="http://romannurik.github.io/AndroidAssetStudio/index.html">Android Asset Studio</a>. See <a href="http://petrnohejl.github.io/Android-Cheatsheet-For-Graphic-Designers/#screen-densities-and-icon-dimensions">Android Cheatsheet for Graphic Designers</a> for correct icon dimensions. Use the icons with highest DPI.</p>
+<h3 id="custom-banner-logo-in-drawer-menu">Custom banner logo in drawer menu</h3>
+<p>There is a pink texture shown in the drawer menu. You can easily change this texture replacing <em>banner.png</em> file in <em>drawable-xxhdpi</em> directory.</p>
+<h3 id="about-dialog">About dialog</h3>
+<p>If you want to change the text in About dialog, just open <em>mobile/src/main/res/values/strings.xml</em> and edit <em>dialog_about_message</em> string. Note that this text is in HTML format and can also contains links.</p>
+<h3 id="multi-language-support">Multi-language support</h3>
+<p>Create a new directory <em>mobile/src/main/res/values-xx</em> where <em>xx</em> is an <a href="http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">ISO 639-1 code</a> of the language you want to translate. For example &quot;values-es&quot; for Spanish, &quot;values-fr&quot; for French, &quot;values-de&quot; for German etc. Copy strings.xml from <em>mobile/src/main/res/values</em> into the new directory. Now you can translate texts for specific languages. The language is automatically determined by system device settings. If there is no match with <em>values-xx</em> language, default language in <em>mobile/src/main/res/values</em> is selected. See <a href="http://developer.android.com/guide/topics/resources/localization.html">Localizing with Resources</a> for more info.</p>
+<h2 id="building-publishing">Building &amp; publishing</h2>
+<p>This chapter describes how to build APK with Gradle and prepare app for publishing. Android Studio uses Gradle for building Android applications.</p>
+<p>You don&#39;t need to install Gradle on your system, because there is a <a href="http://www.gradle.org/docs/current/userguide/gradle_wrapper.html">Gradle Wrapper</a>. The wrapper is a batch script on Windows, and a shell script for other operating systems. When you start a Gradle build via the wrapper, Gradle will be automatically downloaded and used to run the build.</p>
+<ol>
+<li>Open the project in Android Studio</li>
+<li>Open configuration file <em>/mobile/src/main/java/com/robotemplates/cityguide/CityGuideConfig.java</em> and set constants as required (see below for more info)</li>
+<li>Open main build script <em>/mobile/build.gradle</em> and set constants as required (see below for more info)</li>
+<li>Run <code>gradlew assemble</code> in console</li>
+<li>APK should be available in <em>/mobile/build/outputs/apk</em> directory</li>
+</ol>
+<p><strong>Note:</strong> You will also need a &quot;local.properties&quot; file to set the location of the SDK in the same way that the existing SDK requires, using the &quot;sdk.dir&quot; property. Example of &quot;local.properties&quot; on Windows: <code>sdk.dir=C:\\adt-bundle-windows\\sdk</code>. Alternatively, you can set an environment variable called &quot;ANDROID_HOME&quot;.</p>
+<p><strong>Tip:</strong> Command <code>gradlew assemble</code> builds both - debug and release APK. You can use <code>gradlew assembleDebug</code> to build debug APK. You can use <code>gradlew assembleRelease</code> to build release APK. Debug APK is signed by debug keystore. Release APK is signed by own keystore, stored in <em>/extras/keystore</em> directory.</p>
+<p><strong>Signing process:</strong> Keystore passwords are automatically loaded from property file during building the release APK. Path to this file is defined in &quot;keystore.properties&quot; property in &quot;gradle.properties&quot; file. If this property or the file does not exist, user is asked for passwords explicitly.</p>
+<h3 id="cityguideconfig-java">CityGuideConfig.java</h3>
+<p>This is the main configuration file. There are some true/false switches. It is very important to correctly set these switches before building the APK.</p>
+<ul>
+<li>LOGS - true for enabling debug logs</li>
+<li>ANALYTICS - true for enabling Google Analytics</li>
+<li>ADMOB_POI_LIST_BANNER - true for enabling Google AdMob banner on POI list screen</li>
+<li>ADMOB_POI_DETAIL_BANNER - true for enabling Google AdMob on POI detail screen</li>
+<li>ADMOB_MAP_BANNER - true for enabling Google AdMob on map screen</li>
+</ul>
+<p><strong>Important:</strong> Following configuration should be used for release APK, intended for publishing on Google Play:</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">boolean</span> LOGS = <span class="hljs-keyword">false</span>;
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">boolean</span> ANALYTICS = <span class="hljs-keyword">true</span>;
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">boolean</span> ADMOB_POI_LIST_BANNER = <span class="hljs-keyword">true</span>;
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">boolean</span> ADMOB_POI_DETAIL_BANNER = <span class="hljs-keyword">true</span>;
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">boolean</span> ADMOB_MAP_BANNER = <span class="hljs-keyword">true</span>;
+</code></pre>
+<h3 id="build-gradle">build.gradle</h3>
+<p>This is the main build script and there are 4 important constants for defining version code and version name.</p>
+<ul>
+<li>VERSION_MAJOR</li>
+<li>VERSION_MINOR</li>
+<li>VERSION_PATCH</li>
+<li>VERSION_BUILD</li>
+</ul>
+<p>See <a href="http://developer.android.com/tools/publishing/versioning.html#appversioning">Versioning Your Applications</a> in Android documentation for more info.</p>
+<h2 id="dependencies">Dependencies</h2>
+<ul>
+<li><a href="http://developer.android.com/tools/support-library/index.html">Android Support Library</a></li>
+<li><a href="https://developer.android.com/reference/android/support/v7/appcompat/package-summary.html">AppCompat</a></li>
+<li><a href="https://github.com/makovkastar/FloatingActionButton">FloatingActionButton</a></li>
+<li><a href="http://developer.android.com/google/play-services/index.html">Google Play Services</a></li>
+<li><a href="https://github.com/afollestad/material-dialogs">Material Dialogs</a></li>
+<li><a href="http://ormlite.com/">OrmLite</a></li>
+<li><a href="https://github.com/bignerdranch/recyclerview-multiselect">RecyclerView Multiselect</a></li>
+<li><a href="https://github.com/emilsjolander/StickyScrollViewItems">StickyScrollViewItems</a></li>
+<li><a href="https://github.com/nostra13/Android-Universal-Image-Loader">Universal Image Loader</a></li>
+</ul>
+<h2 id="demo-content">Demo content</h2>
+<p>Following images are used in the demo app:</p>
+<ul>
+<li>Eiffel Tower, <a href="https://creativecommons.org/licenses/by-nd/2.0/">CC BY-ND 2.0</a>, <a href="https://www.flickr.com/photos/jwhitesmith/5237068251">https://www.flickr.com/photos/jwhitesmith/5237068251</a></li>
+<li>Musee d&#39;Orsay - Paris, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA 2.0</a>, <a href="https://www.flickr.com/photos/la\_bretagne\_a\_paris/17537283732/">https://www.flickr.com/photos/la\_bretagne\_a\_paris/17537283732/</a></li>
+<li>Pyramide du Louvre, <a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a>, <a href="https://www.flickr.com/photos/david\_bertho/14114830632/">https://www.flickr.com/photos/david\_bertho/14114830632/</a></li>
+<li>Notre Dame&#39;s Face, <a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a>, <a href="https://www.flickr.com/photos/kamgtr/7568427554/">https://www.flickr.com/photos/kamgtr/7568427554/</a></li>
+<li>Palais du Luxembourg, Paris, <a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a>, <a href="https://www.flickr.com/photos/randyconnolly/15130715532">https://www.flickr.com/photos/randyconnolly/15130715532</a></li>
+<li>Arc de triomphe de l&#39;Etoile, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA 2.0</a>, <a href="https://www.flickr.com/photos/chagiajose/2472801470">https://www.flickr.com/photos/chagiajose/2472801470</a></li>
+<li>Sacre-Coeur, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA 2.0</a>, <a href="https://www.flickr.com/photos/gavingilmour/2510254127">https://www.flickr.com/photos/gavingilmour/2510254127</a></li>
+<li>Place des Vosges, <a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a>, <a href="https://www.flickr.com/photos/84554176@N00/8705750707">https://www.flickr.com/photos/84554176@N00/8705750707</a></li>
+<li>Avenue des Champs-Elysees, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA 2.0</a>, <a href="https://www.flickr.com/photos/chagiajose/6968359942">https://www.flickr.com/photos/chagiajose/6968359942</a></li>
+<li>Pantheon, Paris, <a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a>, <a href="https://www.flickr.com/photos/garyullah/8869799567">https://www.flickr.com/photos/garyullah/8869799567</a></li>
+<li>The Centre Pompidou, Paris, <a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a>, <a href="https://www.flickr.com/photos/oh-paris/6093712086">https://www.flickr.com/photos/oh-paris/6093712086</a></li>
+<li>Grande Arche de la Defense, <a href="https://creativecommons.org/licenses/by-nd/2.0/">CC BY-ND 2.0</a>, <a href="https://www.flickr.com/photos/klebtahi/2706168797">https://www.flickr.com/photos/klebtahi/2706168797</a></li>
+<li>Coupe de France 2010, <a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a>, <a href="https://www.flickr.com/photos/psgmag/4570537428">https://www.flickr.com/photos/psgmag/4570537428</a></li>
+<li>Tribune Paris lors de PSG 1-3 OM, <a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a>, <a href="https://www.flickr.com/photos/psgmag/3358593608">https://www.flickr.com/photos/psgmag/3358593608</a></li>
+<li>Court Philippe Chatrier, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA 2.0</a>, <a href="https://www.flickr.com/photos/la\_bretagne\_a\_paris/5756481852">https://www.flickr.com/photos/la\_bretagne\_a\_paris/5756481852</a></li>
+<li>Moulin Rouge, <a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a>, <a href="https://www.flickr.com/photos/juanedc/8124444986">https://www.flickr.com/photos/juanedc/8124444986</a></li>
+<li>Au Lapin Agile, Montmartre, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA 2.0</a>, <a href="https://www.flickr.com/photos/helder/2213861623">https://www.flickr.com/photos/helder/2213861623</a></li>
+<li>Shakespeare and Company Bookstore, <a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a>, <a href="https://www.flickr.com/photos/familyclan/14354270945">https://www.flickr.com/photos/familyclan/14354270945</a></li>
+<li>Galeries Lafayette, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA 2.0</a>, <a href="https://www.flickr.com/photos/maitreyoda/14036300378">https://www.flickr.com/photos/maitreyoda/14036300378</a></li>
+<li>Marche Bastille, <a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a>, <a href="https://www.flickr.com/photos/maveric2003/15089335726">https://www.flickr.com/photos/maveric2003/15089335726</a></li>
+<li>Charles de Gaulle Terminal 2F, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA 2.0</a>, <a href="https://www.flickr.com/photos/fischerfotos/15121210497">https://www.flickr.com/photos/fischerfotos/15121210497</a></li>
+<li>Pitie-Salpetriere Hospital, <a href="https://creativecommons.org/licenses/by-nd/2.0/">CC BY-ND 2.0</a>, <a href="https://www.flickr.com/photos/alan\_adriana/3861321643">https://www.flickr.com/photos/alan\_adriana/3861321643</a></li>
+</ul>
+<h2 id="changelog">Changelog</h2>
+<ul>
+<li>Version 1.0.0<ul>
+<li>Initial release</li>
+</ul>
+</li>
+</ul>
+<h2 id="developed-by">Developed by</h2>
+<p><a href="http://robotemplates.com/">Robo Templates</a></p>
+<h2 id="license">License</h2>
+<p><a href="http://codecanyon.net/licenses">Codecanyon licenses</a></p>
+
+</body></html>
